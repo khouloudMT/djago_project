@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+from meetings.models import Meeting
+
+def meeting_list(request):
+    meetings = Meeting.objects.all()
+    return render(request, 'meetings.html', {'meetings': meetings})

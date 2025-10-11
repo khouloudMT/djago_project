@@ -2,8 +2,11 @@
     <ul>
         {% for meeting in meetings %}
             <li>{{ meeting.title }} </li>
+            <a href="{% url 'deletemeeting' meeting.id %}"> delete  </a>
         {%empty %}
         <li> No meetings available at the moment. </li>
+
         {% endfor %}
     </ul>
+    <a href="{% url 'addmeeting' %}"> add meeting </a>
 </div>

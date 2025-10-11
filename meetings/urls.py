@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.urls import path
 
-from meetings.views import detail, meeting_list
+from meetings.views import addmeeting, deletemeeting, detail, meeting_list
 
 urlpatterns = [
     path('', meeting_list,name='meetings'),
     path('detail/<int:id>/', detail ,name='detail'),
+    path('delete/<int:id>/',deletemeeting,name='deletemeeting'),
+    path('add/',addmeeting,name='addmeeting'),
 ]

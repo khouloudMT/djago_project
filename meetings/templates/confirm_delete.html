@@ -1,0 +1,7 @@
+<h1> delete meeting</h1>
+<p> are you sure you want to delete "{{ meeting.title }}" ? </p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit"> yes, delete </button>    
+</form>
+<a href="{% url 'meetings' %}"> cancel </a>
